@@ -15,7 +15,7 @@ return new class extends Migration
         //
         Schema::create('transaction_histories', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->string('account_no')->nullable();
             $table->string('account_title')->nullable();
             $table->integer('amount')->nullable();

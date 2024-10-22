@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('bank_type');
             $table->string('email')->unique();
             $table->text('image');
-            $table->foreign('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('status')->default('pending');
             $table->timestamps();
         });
