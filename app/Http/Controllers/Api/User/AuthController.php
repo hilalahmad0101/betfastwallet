@@ -81,7 +81,22 @@ class AuthController extends Controller
             return response()->json(data: [
                 "success" => false,
                 "message" => $e->getMessage(),
-            ], status: 500);;
+            ], status: 500);
+        }
+    }
+
+
+    public function makeDeposit(Request $request){
+        try{
+            $validator=Validator::make(data: $request->all(), rules: [
+                'amount'=>'required',
+
+            ]);
+        }catch(\Throwable $th){
+            return response()->json(data: [
+                "success" => false,
+                "message" => $th->getMessage(),
+            ], status: 500);
         }
     }
 }
