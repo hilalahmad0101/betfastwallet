@@ -4,16 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TransactionHistory extends Model
+class Withdraw extends Model
 {
     protected $fillable = [
         'user_id',
+        'amount',
+        'payment_method',
         'account_no',
         'account_title',
-        'amount',
-        'bank_type',
-        'image',
-        'payment_type',
-        'status',
     ];
 }

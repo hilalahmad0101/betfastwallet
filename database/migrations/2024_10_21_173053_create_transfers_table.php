@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('account_password');
             $table->integer('amount');
             $table->string('bank_type');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->text('image');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('status')->default('pending');
